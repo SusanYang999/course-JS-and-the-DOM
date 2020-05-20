@@ -1,0 +1,19 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritefood: "icecream"};
+  }
+  static getDerivedStateFromProps(props, state) {
+    return {favoritefood: props.favfood };
+  }
+  render() {
+    return (
+      <h1>My Favorite Color is {this.state.favoritefood}</h1>
+    );
+  }
+}
+
+ReactDOM.render(<Header favfood="choclate"/>, document.getElementById('root'));
